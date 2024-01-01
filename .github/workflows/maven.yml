@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file SLM_Technicolor-Tales/TicTacToe/pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
@@ -38,15 +38,13 @@ jobs:
       uses: actions/upload-artifact@v4.0.0
       with:
         name: artifact # optional, default is artifact
-        path: SLM_Technicolor-Tales/TicTacToe/pom.xml
         if-no-files-found: warn # optional, default is warn
 
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.1.0
       with:
         # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
-        name: Artifact
-        # Destination path. Supports basic tilde expansion. Defaults to $GITHUB_WORKSPACE
-        path: SLM_Technicolor-Tales/TicTacToe/pom.xml
+        name: BuildArtifact
+  
        
               
