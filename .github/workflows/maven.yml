@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v4.0.0
       with:
         name: artifact # optional, default is artifact
-        path: SLM_Technicolor-Tales/.github/workflows
+        path: $GITHUB_WORKSPACE
         if-no-files-found: warn # optional, default is warn
 
     - name: Download a Build Artifact
