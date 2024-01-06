@@ -1,17 +1,20 @@
 package TechnicolorTales;
 
-import org.junit.Test;
+import lombok.SneakyThrows;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
 
     /*Test Klasse für die Board Klasse, beinhaltet Positive & Negative
-    Tests per Methode in der Board Klasse */
+    Unit Tests per Methode in der Board Klasse */
 
     @Test
+    @SneakyThrows
     public void IsCellEmpty_Positive() {
         Board board= new Board();
+        board.clear();
         assertTrue(board.isCellEmpty(0,0)); //Wenn das Board wirklich empty ist -> dann True
     }
 
@@ -31,6 +34,7 @@ class BoardTest {
     @Test
     public void Place_Negative() { //N-Case: Zeichen in einer nicht leeren Zelle setzen
         Board board=new Board();
+        board.clear();
         board.place(1,1,'X');
         board.place(1,1,'O');
         assertEquals('X', board.getCells()[1][1]);
@@ -48,6 +52,7 @@ class BoardTest {
     @Test
     public void isFull_Negative() { //N-Case: Board ist nicht voll
         Board board=new Board();
+        board.clear();
         board.place(0,0,'X');
         board.place(1,0,'O');
         assertFalse(board.isFull());
