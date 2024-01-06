@@ -59,7 +59,7 @@ public class Board {
             return true;
 
         // Diagonale von (0,2) bis (2,0)
-        if (this.cells[0][2] != ' ' && this.cells[0][2] == this.cells[1][1] && this.cells[0][0] == this.cells[2][0])
+        if (this.cells[0][2] != ' ' && this.cells[0][2] == this.cells[1][1] && this.cells[0][2] == this.cells[2][0])
             return true;
 
         return false;
