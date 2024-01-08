@@ -11,7 +11,7 @@ class TicTacToeTest {
 
    @SneakyThrows
    @Test
-    void startDraw() { // Tests if input for draw is handled right
+    void startDraw() { // Tests if input for "draw" is handled right
        // Arrange
        InputStream inputStream = new ByteArrayInputStream("0\n0\n2\n0\n1\n1\n2\n2\n1\n2\n0\n1\n0\n2\n1\n0\n2\n1".getBytes());
        System.setIn(inputStream);
