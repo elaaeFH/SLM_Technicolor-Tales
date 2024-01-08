@@ -31,7 +31,7 @@ public class Board {
                     return false;
             }
         }
-        return true; //Keine leeren Zellen gefunden also ist der Board voll
+        return true; //Keine leeren Zellen gefunden also ist das Board voll
     }
     public void clear(){
         for (int i = 0; i < 3; i++) { // Von 0 bis exklusive 3

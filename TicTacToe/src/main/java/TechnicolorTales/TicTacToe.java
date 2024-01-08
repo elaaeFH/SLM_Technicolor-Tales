@@ -34,10 +34,15 @@ public class TicTacToe {
 
             int x,y;
 
-            System.out.println("row (0-2): ");
-            x= Integer.parseInt(bufferedReader.readLine());
-            System.out.println("column (0-2): ");
-            y=Integer.parseInt(bufferedReader.readLine());
+            try {
+                System.out.println("row (0-2): ");
+                x = Integer.parseInt(bufferedReader.readLine());
+                System.out.println("column (0-2): ");
+                y = Integer.parseInt(bufferedReader.readLine());
+            } catch (NumberFormatException nfe) {
+                System.out.println("Invalid input. Please enter a number.");
+                continue; // Restart the loop to get valid input
+            }
 
             if(!board.isCellEmpty(x,y)){
                 System.out.println("Cell is already full");
@@ -49,7 +54,7 @@ public class TicTacToe {
 
         if(board.hasWinner()){
             switchCurrentPlayer();
-            System.out.println("Player "+ currentplayer.getMarker() + " wins ҉ ヽ(^o^)/ ҉ ");
+            System.out.println("Player " + currentplayer.getMarker() + " wins ҉ ヽ(^o^)/ ҉ ");
         } else if(board.isFull()){
             System.out.println("It is a draw :/ ");
         }
@@ -61,4 +66,5 @@ public class TicTacToe {
             currentplayer=player2;
         } else currentplayer= player1;
     }
+
 }
